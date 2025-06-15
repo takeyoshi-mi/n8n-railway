@@ -1,6 +1,6 @@
-FROM node:18-alpine
+FROM node:20-alpine
 ARG N8N_VERSION=1.97.1
-RUN apk add --update graphicsmagick tzdata
+RUN apk add --update graphicsmagick tzdata git
 USER root
 RUN apk --update add --virtual build-dependencies python3 build-base && \
     npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
